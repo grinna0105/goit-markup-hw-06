@@ -560,8 +560,7 @@ button {
   box-shadow: none;
 
   transition: color var(--timing-function),
-    background-color var(--timing-function),
-    box-shadow var(--timing-function);
+    background-color var(--timing-function), box-shadow var(--timing-function);
 }
 
 .button-filter:hover,
@@ -588,7 +587,7 @@ button {
 
 .examples-card a {
   display: block;
-  
+
   transition: box-shadow var(--timing-function);
 }
 
@@ -733,7 +732,8 @@ a:focus .examples-description {
   gap: 10px;
 }
 
-.footer-text, .subscrtion-title {
+.footer-text,
+.subscrtion-title {
   margin-bottom: 20px;
 
   font-weight: 700;
@@ -776,7 +776,6 @@ a:focus .examples-description {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-    
 }
 
 .form-input {
@@ -803,13 +802,8 @@ a:focus .examples-description {
   color: var(--additional-color);
 }
 
-.subscription {
-  position: relative;
-  
-}
-
 .subscription-button {
-  
+  position: relative;
   padding: 10px 28px;
   min-width: 200px;
   height: 50px;
@@ -819,12 +813,11 @@ a:focus .examples-description {
   line-height: 1.88;
   text-align: left;
   letter-spacing: 0.06em;
-  
+
   color: var(--primary-white-color);
   background-color: var(--accent-color);
 
   transition: background-color var(--timing-function);
-
 }
 
 .subscription-button:hover,
@@ -832,14 +825,12 @@ a:focus .examples-description {
   background-color: var(--accent-button-color);
 }
 
-
-.subscription svg {
+.subscription-button svg {
   display: block;
   position: absolute;
   top: 50%;
   right: 28px;
   transform: translateY(-50%);
-
 }
 
 /* modal */
@@ -848,7 +839,7 @@ a:focus .examples-description {
   position: fixed;
   top: 0;
   left: 0;
-  
+
   width: 100%;
   height: 100vh;
 
@@ -861,7 +852,6 @@ a:focus .examples-description {
 .backdrop.is-hidden {
   opacity: 0;
   pointer-events: none;
-  
 }
 
 .modal {
@@ -869,7 +859,7 @@ a:focus .examples-description {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  
+
   padding: 40px;
 
   height: 581px;
@@ -917,7 +907,6 @@ a:focus .examples-description {
   /* outline: 1px solid yellow; */
   margin-left: auto;
   margin-right: auto;
-
 }
 
 .form-field {
@@ -927,17 +916,24 @@ a:focus .examples-description {
   margin-bottom: 10px;
 }
 
+.form-field:nth-of-type(4) {
+  margin-bottom: 0;
+}
+
 .form-field label {
   display: flex;
   flex-direction: column;
   margin-bottom: 4px;
- 
 
   text-align: left;
   font-size: 12px;
   line-height: 1.17;
   letter-spacing: 0.01em;
   color: var(--primary-text-color);
+}
+
+.form-field:nth-of-type(4) label {
+  margin-bottom: 0;
 }
 
 .form-field input {
@@ -951,6 +947,9 @@ a:focus .examples-description {
   border: 1px solid var(--form-border);
   border-radius: 4px;
   outline: none;
+  color: var(--primary-black-color);
+
+  transition: border-color var(--timing-function);
 }
 
 .form-field input:focus,
@@ -965,22 +964,21 @@ a:focus .examples-description {
 
 .form-wrap {
   position: relative;
-  
 }
 
 .form-wrap svg {
-  
   position: absolute;
   top: 50%;
   left: 15px;
   transform: translateY(-50%);
-
+  transition: fill var(--timing-function);
 }
 
-
 .comment textarea {
+  border: none;
+  outline: none;
   height: 120px;
-
+  margin-top: 4px;
   padding: 12px 16px;
   resize: none;
   border: 1px solid var(--form-border);
@@ -988,11 +986,26 @@ a:focus .examples-description {
   font-size: 12px;
   line-height: 1.17;
   letter-spacing: 0.01em;
-  
+
+  transition: border-color var(--timing-function);
+}
+
+.comment textarea:hover,
+.comment textarea:focus {
+  border-color: var(--accent-color);
 }
 
 textarea::placeholder {
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.01em;
   color: var(--textarea-color);
+  transition: color var(--timing-function);
+}
+
+textarea:hover::placeholder,
+textarea:focus::placeholder {
+  color: var(--accent-color);
 }
 
 .accept {
@@ -1003,7 +1016,6 @@ textarea::placeholder {
   height: 24px;
   margin-top: 20px;
   margin-bottom: 30px;
-  
 }
 
 .accept label {
@@ -1012,7 +1024,7 @@ textarea::placeholder {
   text-align: center;
   justify-content: center;
   padding-left: 24px;
-  
+
   font-size: 14px;
   line-height: 1.71;
   letter-spacing: 0.03em;
@@ -1039,13 +1051,12 @@ textarea::placeholder {
   display: none;
 }
 
-.accept input:focus:checked+label .checkbox {
+.accept input:focus:checked + label .checkbox {
   fill: var(--accent-color);
   border: none;
-  
 }
 
-.accept input:focus:checked+label .checkbox svg {
+.accept input:focus:checked + label .checkbox svg {
   display: block;
   fill: var(--accent-color);
 }
