@@ -796,10 +796,24 @@ a:focus .examples-description {
   line-height: 1.25;
   letter-spacing: 0.03em;
   color: var(--primary-white-color);
+
+  transition: border-color var(--timing-function);
+}
+
+.form-input:hover,
+.form-input:focus {
+  border-color: var(--accent-color);
 }
 
 .form-input::placeholder {
   color: var(--additional-color);
+
+  transition: color var(--timing-function);
+}
+
+.form-input:hover::placeholder,
+.form-input:focus::placeholder {
+  color: var(--accent-color);
 }
 
 .subscription-button {
@@ -947,6 +961,7 @@ a:focus .examples-description {
   border: 1px solid var(--form-border);
   border-radius: 4px;
   outline: none;
+  font-size: 16px;
   color: var(--primary-black-color);
 
   transition: border-color var(--timing-function);
@@ -983,7 +998,7 @@ a:focus .examples-description {
   resize: none;
   border: 1px solid var(--form-border);
   border-radius: 4px;
-  font-size: 12px;
+  font-size: 16px;
   line-height: 1.17;
   letter-spacing: 0.01em;
 
